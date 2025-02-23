@@ -34,5 +34,4 @@ fi
 # export bin to path
 export PATH=$PATH:$(go env GOBIN)
 
-#TODO - cleanup naming/output issue https://github.com/golang/go/issues/44469
-go install ./cmd/main.go
+go install ./...

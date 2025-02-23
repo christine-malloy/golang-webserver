@@ -25,7 +25,12 @@ while getopts ":h" opt; do
     esac
 done
 
-export PATH=$PATH:$(go env GOPATH)/bin
+# Set GOBIN if it's not already set, using $HOME/bin as the default
+if [ -z "$(go env GOBIN)" ]; then
+  echo "Setting GOBIN to $HOME/bin"
+  go env -w GOBIN=$HOME/bin
+fi
 
+# set and export GOPATH
 go env -w GOPATH=$(go env GOPATH)
-go env -w GOBIN=$(go env GOBIN)
+export PATH=$PATH:$(go env GOPATH)/bin

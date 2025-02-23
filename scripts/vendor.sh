@@ -8,7 +8,7 @@ usage() {
     echo "Usage: $0 [options]"
     echo "Options:"
     echo "  -h    Show this help message"
-    echo "builds a binary in the bin directory"
+    echo "cleans up packages and downloads project dependencies to vendor directory"
     exit 0
 }
 
@@ -25,7 +25,4 @@ while getopts ":h" opt; do
     esac
 done
 
-# clean bin first
-rm -rf bin
-
-go build -o bin/golang-webserver ./cmd/server/main.go
+go mod tidy && go mod vendor
