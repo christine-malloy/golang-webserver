@@ -1,0 +1,24 @@
+version: 1.0
+runtime: golang1
+build:
+  commands:
+    build:
+      - go build -o bin/golang-webserver ./cmd/golang-webserver/main.go
+run:
+  runtime-version: 1.x
+  command: ./bin/golang-webserver
+  network:
+    port: 9000
+  env:
+    - name: PORT
+      value: "9000"
+  memory: 512
+  cpu: 256
+
+health_check:
+  protocol: HTTP
+  path: /health
+  interval: 10
+  timeout: 5
+  healthy_threshold: 2
+  unhealthy_threshold: 3

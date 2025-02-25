@@ -25,4 +25,4 @@ while getopts ":h" opt; do
     esac
 done
 
-go run ./cmd/main.go
+go run ./cmd/golang-webserver/main.go

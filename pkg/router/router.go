@@ -9,7 +9,7 @@ func SetupRouter() *gin.Engine {
 	router := gin.Default()
 
 	router.GET("/", home)
-	router.GET("/status", healthCheck)
+	router.GET("/health", healthCheck)
 
 	return router
 }
@@ -23,4 +23,3 @@ func healthCheck(c *gin.Context) {
 		"status": "up",
 	})
 }
-	

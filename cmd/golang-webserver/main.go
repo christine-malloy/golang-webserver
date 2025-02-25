@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/christinemalloy/golang-webserver/pkg/router"
 	"log"
 	"os"
-	"github.com/christinemalloy/golang-webserver/pkg/router"
 )
 
 func main() {

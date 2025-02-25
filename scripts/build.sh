@@ -28,4 +28,4 @@ done
 # clean bin first
 rm -rf bin
 
-go build -o bin/golang-webserver ./cmd/server/main.go
+go build -o bin/golang-webserver ./cmd/golang-webserver/main.go
